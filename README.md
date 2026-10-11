@@ -123,7 +123,7 @@ Testing covers:
 **Project:** RELIEF360 – Disaster Relief Management System  
 **Category:** Database Management System (DBMS)  
 **Database:** PostgreSQL  
-**Owner:**Parvathy S Lal
+**Owner:** Parvathy S Lal
 **Institution:** Amrita Vishwa Vidyapeetham, Amritapuri
 
 ## License

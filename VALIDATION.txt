@@ -1,0 +1,20 @@
+RELIEF360 PostgreSQL edition — validation completed 4 October 2026
+
+PASS: Full native PostgreSQL DDL parsed/executed in PGlite (a WebAssembly PostgreSQL engine); 24 public base tables created.
+PASS: psycopg connectivity through the PostgreSQL wire protocol, identity RETURNING, demo seed, all 11 listing queries, dashboard/report queries and setup reinitialization.
+PASS: 8 HTTP integration tests against the PostgreSQL-compatible test engine:
+ - login/logout, CSRF checks and private-file protection
+ - all operational workflows, multi-item distributions, receipts, reports/CSV and vehicle double-book rejection
+ - role-write denial
+ - positive values, capacity, same-disaster constraints and foreign-key guard
+ - account creation, password changes and exact monetary validation
+ - multi-item rollback and duplicate-line rejection
+ - table/data persistence across application reinitialization
+ - direct SQL edits visible through webpage API; deferred rejection of incomplete distribution
+PASS: frontend DOM-stub checks for 11 modules, named fields, escaped record rendering and authenticated API request wiring.
+PASS: Python compilation and JavaScript syntax checks.
+
+LIMITS:
+Native PostgreSQL could not be started in this workspace. Tests used PGlite's PostgreSQL wire bridge; a test-harness-only rollback-acknowledgement compatibility shim was necessary for that bridge. This shim is not included in the delivered application. Native concurrent/multiple-session behavior, Windows launchers, live browser appearance and the user's own PostgreSQL installation were not verified here. The supplied native PostgreSQL test suite includes a concurrent-stock test for execution against a separate disposable *_test database.
+
+Your actual local PostgreSQL connection is verified when SETUP_WINDOWS.bat/setup_database.py runs. No credentials, local db_config.json, database files or validation-engine dependencies are included in this ZIP.

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/fallback.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | RELIEF360 - Emergency Operations Center</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <!-- EOC Custom Theme -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Self-Contained Failsafe CSS (Guarantees Perfect Render Offline & On Local File Protocol) -->
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body.login-body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%) !important;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #334155;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .login-card {
+      background: #FFFFFF !important;
+      border-radius: 16px !important;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+      padding: 2.25rem !important;
+      border: 1px solid #334155 !important;
+    }
+
+    .login-brand-header {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .login-logo-badge {
+      width: 56px;
+      height: 56px;
+      background: #2563EB;
+      color: #FFFFFF;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      margin-bottom: 0.75rem;
+    }
+
+    .login-brand-header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .login-brand-header p {
+      font-size: 0.82rem;
+      color: #64748B;
+      margin-top: 0.25rem;
+    }
+
+    .login-agency-notice {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.78rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .form-group-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-custom {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 0.4rem;
+    }
+
+    .input-box-wrapper {
+      display: flex;
+      align-items: center;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      background: #FFFFFF;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-box-wrapper:focus-within {
+      border-color: #2563EB;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .input-icon-cell {
+      padding: 0.65rem 0.85rem;
+      background: #F8FAFC;
+      border-right: 1px solid #E2E8F0;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .input-field-custom, .select-field-custom {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.88rem;
+      border: none;
+      outline: none;
+      color: #0F172A;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .btn-eoc-submit {
+      background: #2563EB;
+      color: #FFFFFF;
+      font-weight: 600;
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      border: none;
+      width: 100%;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s, transform 0.1s;
+      margin-top: 1.5rem;
+    }
+
+    .btn-eoc-submit:hover {
+      background: #1D4ED8;
+    }
+
+    .btn-eoc-submit:active {
+      transform: scale(0.99);
+    }
+
+    .login-footer-note {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #E2E8F0;
+      font-size: 0.75rem;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+  </style>
+</head>
+<body class="login-body">
+
+  <div class="login-container">
+    <div class="login-card">
+
+      <!-- Brand Header -->
+      <div class="login-brand-header">
+        <div class="login-logo-badge">
+          <!-- Standalone SVG Shield Icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h1>RELIEF360</h1>
+        <p>Disaster Response & Relief Management System</p>
+      </div>
+
+      <!-- Agency Notice Badge -->
+      <div class="login-agency-notice">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <line x1="9" y1="3" x2="9" y2="21"/>
+        </svg>
+        <div>State Emergency Operations Center (EOC) Portal</div>
+      </div>
+
+      <!-- Login Form -->
+      <form id="eocLoginForm">
+
+        
+
+        <div class="form-group-item">
+          <label for="username" class="form-label-custom">Official User ID / Email</label>
+          <div class="input-box-wrapper">
+            <div class="input-icon-cell">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <input type="text" class="input-field-custom" id="username" autocomplete="username" value="admin@relief360.local" placeholder="e.g. admin@relief360.local" required>
+          </div>
+        </div>
+
+        <div class="form-group-item">
+          <label for="password" class="form-label-custom">Security Clearance Password</label>
+          <div class="input-box-wrapper">
+            <div class="input-icon-cell">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <input type="password" class="input-field-custom" id="password" autocomplete="current-password" value="" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-eoc-submit">
+          <span>Authenticate & Enter EOC Dashboard</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+
+      </form>
+
+      <p id="loginError" role="alert" style="color:#b91c1c;margin-top:1rem"></p><p style="font-size:.8rem;margin-top:1rem">Local demonstration account: admin@relief360.local<br>Initial password: Relief360!2026<br>Change this password after signing in.</p>
+<!-- Footer Note -->
+      <div class="login-footer-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <span>Authorized Personnel Only • DBMS Project Evaluation</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Login Session Script -->
+  <script>
+document.getElementById('eocLoginForm').onsubmit=async e=>{e.preventDefault();const button=e.target.querySelector('button');button.disabled=true;try{const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('username').value,password:document.getElementById('password').value})});const data=await r.json();if(!r.ok)throw new Error(data.error);location.href='index.html';}catch(err){document.getElementById('loginError').textContent=err.message;button.disabled=false;}};
+</script>
+
+</body>
+</html>
